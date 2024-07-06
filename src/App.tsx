@@ -3,14 +3,22 @@ import './App.css'
 
 function App() {
     const tg = window.Telegram.WebApp
-
     const [userName, setUserName] = useState('')
     const [clicked, setClicked] = useState(false)
 
     useEffect(() => {
+        // Expand the app to full screen and set up the main button
+        tg.expand()
+        tg.MainButton.setText('Hello from Mini App!').show()
+
         // Example of using Telegram WebApp API
         tg.MainButton.setText('Click me!')
         tg.MainButton.show()
+
+        // Cleanup on unmount
+        return () => {
+            tg.MainButton.hide()
+        }
     }, [tg])
 
     const handleClickButton = () => {
