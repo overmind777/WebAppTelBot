@@ -7,18 +7,9 @@ function App() {
     const [clicked, setClicked] = useState(false)
 
     useEffect(() => {
-        // Expand the app to full screen and set up the main button
+        // Expand the app to full screen
         tg.expand()
-        tg.MainButton.setText('Hello from Mini App!').show()
 
-        // Example of using Telegram WebApp API
-        tg.MainButton.setText('Click me!')
-        tg.MainButton.show()
-
-        // Cleanup on unmount
-        return () => {
-            tg.MainButton.hide()
-        }
     }, [tg])
 
     const handleClickButton = () => {
