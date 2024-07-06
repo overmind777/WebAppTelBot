@@ -1,23 +1,31 @@
+import { useEffect, useState } from 'react'
+import './App.css'
 
-import { useEffect, useState } from 'react';
-import './index.css';
+function App() {
+    const tg = window.Telegram.WebApp
 
-const App = () => {
-  const [count, setCount] = useState(0)
+    const [userName, setUserName] = useState('')
+    const [clicked, setClicked] = useState(false)
 
-  useEffect(() => { },[])
+    useEffect(() => {
+        // Example of using Telegram WebApp API
+        tg.MainButton.setText('Click me!')
+        tg.MainButton.show()
+    }, [tg])
 
-  const handleClickButton = () => {
-    setCount(count + 1)
-  }
+    const handleClickButton = () => {
+        setUserName('Mother Fucker')
+        setClicked(true)
+        tg.sendData('Button clicked') // Example of sending data to Telegram
+    }
 
-  return (
-    <>
-      <h1>React App</h1>
-      <p>{count }</p>
-      <button onClick={handleClickButton}>Click</button>
-    </>
-  );
-};
+    return (
+        <div>
+            <h1>Hello, {userName}</h1>
+            <button onClick={handleClickButton}>Click me</button>
+            {clicked && <p>Хулі ти клікаєш !!!</p>}
+        </div>
+    )
+}
 
-export default App;
+export default App
