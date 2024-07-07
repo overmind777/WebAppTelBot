@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import icon from './icons/swarmV1.svg'
+
 import './App.css'
 
 function App() {
@@ -20,6 +22,12 @@ function App() {
 
     return (
         <div>
+            <div>
+                <svg width={40} height={40}>
+            <use xlinkHref={`${icon}#icon-swarm`}></use>
+                </svg>
+                <button>Wallet</button>
+            </div>
             <h1>Hello, {userName}</h1>
             <button onClick={handleClickButton}>Click me</button>
             {clicked && <p>Хулі ти клікаєш !!!</p>}
