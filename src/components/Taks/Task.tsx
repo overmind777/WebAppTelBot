@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 
 const Task = () => {
-  const [task, setTask] = useState('')
+  const [task] = useState('')
   
     return (
         <Wrapper>

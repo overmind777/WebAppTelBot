@@ -2,8 +2,8 @@ import { useState } from 'react'
 import styled from 'styled-components'
 
 const TokensComponent = () => {
-    const [swarm, setSwarm] = useState(0)
-    const [shiba, setShiba] = useState(0)
+    const [swarm] = useState(0)
+    const [shiba] = useState(0)
 
     return (
         <Wrapper>
