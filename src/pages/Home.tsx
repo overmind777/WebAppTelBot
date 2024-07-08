@@ -21,12 +21,4 @@ const Wrapper = styled.div`
 
     padding-top: 10px;
     padding-bottom: 10px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    & :nth-child(){
-      height: calc((100% - 20px)/3);
-    }
 `
