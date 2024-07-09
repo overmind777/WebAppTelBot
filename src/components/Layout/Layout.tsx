@@ -6,9 +6,9 @@ const Layout = () => {
     return (
         <Wrapper>
             <Header />
-            <OutletWrapper>
+            <div>
                 <Outlet />
-            </OutletWrapper>
+            </div>
         </Wrapper>
     )
 }
@@ -16,14 +16,9 @@ const Layout = () => {
 export default Layout
 
 const Wrapper = styled.div`
-    width: 100%;
-    height: 100%;
-
+    
     text-align: center;
     padding: 5px;
 `
 
-const OutletWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-`
+

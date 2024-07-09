@@ -1,17 +1,28 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import icon from '/icons/sprite.svg'
 
 function Header() {
-    return (
-      <HeaderStyled>
-        <SvgWrapper>
-            <SvgStyled width={40} height={40}>
-                {/* <use xlinkHref={`/public/vite.svg`}></use> */}
-                <use xlinkHref={`${icon}#icon-swarmV2`}></use>
-            </SvgStyled>
+    const navigate = useNavigate()
 
-        </SvgWrapper>
-            <button>Wallet</button>
+    const handleClickHomeButton = () => {
+        navigate('/')
+    }
+
+    const handleClickTasksButton = () => {
+        navigate('/tasks')
+    }
+
+    const handleClickWalletButton = () => {
+        navigate('/wallet')
+    }
+
+    return (
+        <HeaderStyled>
+            <button onClick={handleClickHomeButton}>Home</button>
+            <RightWrapper>
+                <button onClick={handleClickTasksButton}>Tasks</button>
+                <button onClick={handleClickWalletButton}>Wallet</button>
+            </RightWrapper>
         </HeaderStyled>
     )
 }
@@ -19,14 +30,11 @@ function Header() {
 export default Header
 
 const HeaderStyled = styled.header`
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 `
 
-const SvgStyled = styled.svg`
-  fill: white;
-`
-
-const SvgWrapper = styled.div`
-   
+const RightWrapper = styled.div`
+    display: flex;
+    gap: 10px;
 `
