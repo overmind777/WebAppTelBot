@@ -21,5 +21,5 @@ const Wrapper = styled.div`
     align-items: flex-start;
     gap: 10px;
 
-    margin-top: 200px;
+    margin-top: 300px;
 `
